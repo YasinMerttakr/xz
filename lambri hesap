@@ -1,0 +1,19 @@
+# Duvar ölçülerini alalım
+en = float(input("Duvarınızın genişliğini (metre cinsinde) girin: "))
+yukseklik = float(input("Duvarınızın yüksekliğini (metre cinsinde) girin: "))
+
+# Duvarın genişliğini 11.5'e bölerek boy sayısını belirleyelim
+boy = en / 11.5
+
+# Yüksekliğin 2.90'dan az olması durumunda 1 boy yeterlidir
+if yukseklik <= 2.90:
+    print("Duvarınızın boyutları:", int(boy), "boy yeterlidir.")
+else:
+    # Yükseklik 2.90'dan büyükse ve katlarına bölünebiliyorsa
+    if yukseklik % 2.90 == 0:
+        print("Duvarınızın boyutları:", int(boy), "x", int(yukseklik / 2.90), "boy yeterlidir.")
+    # Katlarına bölünemiyorsa, en yakın katın altını alalım
+    else:
+        alt_kat = int(yukseklik // 2.90)
+        print("Duvarınızın boyutları:", int(boy), "x", alt_kat, "boy yeterlidir.")
+
